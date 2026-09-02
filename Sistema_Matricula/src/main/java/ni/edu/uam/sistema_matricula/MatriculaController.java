@@ -3,7 +3,7 @@ package ni.edu.uam.sistema_matricula;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class HelloController {
+public class MatriculaController {
     @FXML
     private Label welcomeText;
 

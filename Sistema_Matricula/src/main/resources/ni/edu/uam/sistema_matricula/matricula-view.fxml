@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ni.edu.uam.sistema_matricula.controllers.MatriculaController" onKeyPressed="#onTecladoPresionado" prefHeight="600.0" prefWidth="900.0">
+    <MenuBar>
+        <Menu text="Archivo">
+            <MenuItem text="Nuevo" onAction="#limpiarAction"/>
+            <MenuItem text="Salir"/>
+        </Menu>
+        <Menu text="Ayuda">
+            <MenuItem text="Acerca de"/>
+        </Menu>
+    </MenuBar>
+    <ToolBar>
+        <Button text="Guardar" onAction="#guardarRegistro"/>
+        <Button text="Limpiar" onAction="#limpiarAction"/>
+        <Button text="Eliminar" onAction="#eliminarRegistro"/>
+    </ToolBar>
+    <HBox spacing="20" style="-fx-padding: 20;">
+        <VBox spacing="10" prefWidth="300">
+            <ImageView fitHeight="50" fitWidth="150" pickOnBounds="true" preserveRatio="true"/>
+            <TextField fx:id="txtNombres" promptText="Nombres"/>
+            <TextField fx:id="txtApellidos" promptText="Apellidos"/>
+            <TextField fx:id="txtUsuario" promptText="Usuario (min 5)"/>
+            <PasswordField fx:id="txtContrasena" promptText="Contraseña (min 8)"/>
+            <DatePicker fx:id="dpFecha" promptText="Fecha de Nacimiento"/>
+            <ComboBox fx:id="cbDepartamento" promptText="Departamento" prefWidth="300"/>
+            <Label text="Curso:"/>
+            <ListView fx:id="lvCursos" prefHeight="100"/>
+            <HBox spacing="10">
+                <RadioButton fx:id="rbPresencial" text="Presencial"/>
+                <RadioButton fx:id="rbVirtual" text="Virtual"/>
+            </HBox>
+            <HBox spacing="10">
+                <CheckBox fx:id="chkManana" text="Mañana"/>
+                <CheckBox fx:id="chkTarde" text="Tarde"/>
+            </HBox>
+            <CheckBox fx:id="chkNormas" text="Acepto las normas"/>
+        </VBox>
+        <TableView fx:id="tvEstudiantes" HBox.hgrow="ALWAYS" onMouseClicked="#onTablaDobleClic">
+            <columns>
+                <TableColumn fx:id="colNombre" text="Nombre Completo" prefWidth="150"/>
+                <TableColumn fx:id="colDepto" text="Departamento"/>
+                <TableColumn fx:id="colCurso" text="Curso"/>
+                <TableColumn fx:id="colModalidad" text="Modalidad"/>
+                <TableColumn fx:id="colHorario" text="Horario"/>
+                <TableColumn fx:id="colFecha" text="F. Nacimiento"/>
+            </columns>
+        </TableView>
+    </HBox>
+</VBox>
